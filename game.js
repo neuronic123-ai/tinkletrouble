@@ -37,7 +37,7 @@ function paintRoom(g,w,h,t,time=0){
  const light=g.createLinearGradient(0,0,w,h);light.addColorStop(0,'#ffffff28');light.addColorStop(1,'#ffffff00');g.fillStyle=light;g.fillRect(0,0,w,h);
  g.globalAlpha=.18;ellipse(g,220,365,126,42,t.accent);g.globalAlpha=1;
  rect(g,23,136,40,55,9,t.accent);rect(g,21,127,42,54,9,t.seat,t.accent);rect(g,17,130,50,16,6,t.seat,t.accent);g.fillStyle='#fff';g.fillRect(36,181,13,22);g.fillStyle=t.tile;g.fillRect(43,186,1,12);
- rect(g,w-90,133,70,58,10,t.accent);rect(g,w-93,128,70,58,10,'#ffef75',t.accent);g.fillStyle='#422068';g.font='bold 10px Arial';g.textAlign='center';g.fillText('GOOD AIM',w-58,151);g.fillText('GOOD DAY',w-58,167);
+g.fillStyle='#422068';g.font='bold 10px Arial';g.textAlign='center';
 }
 function drawToilet(g,x,y,t,time=0){
  rect(g,x-52,y+48,104,88,26,t.accent);rect(g,x-48,y+44,96,79,25,t.seat,t.accent);
