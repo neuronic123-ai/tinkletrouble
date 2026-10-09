@@ -1,0 +1,34 @@
+TINKLE TROUBLE 1.1 — VIBRANT EDITION
+
+TO UPDATE YOUR EXISTING GITHUB GAME:
+Replace the root index.html, styles.css, core.js, game.js, audio.js and icon.svg.
+Wait for Pages to update, then press Ctrl + F5. No progress reset is needed.
+
+START HERE
+
+FOR GITHUB:
+Upload everything INSIDE this folder to the root of your new repository.
+Enable GitHub Pages: Settings > Pages > main branch > / (root).
+Open the Pages link to play. The browser game has no AdMob ads.
+
+FOR ANDROID:
+Install Node.js 22+, Android Studio, JDK 21 and Android SDK 36.
+Open a terminal in this folder and run:
+
+npm ci
+npm test
+npm run android
+npm run open
+
+The Android project and bundled web assets are already included.
+Google test ad IDs are already configured. Use a physical Android device
+for your first ad test. Never click live ads during development.
+
+BEFORE PUBLIC RELEASE:
+Replace the test IDs in config.js with this game's own AdMob IDs.
+Set testMode to false for the release build only.
+Configure the consent messages in your AdMob account.
+Add your support email to privacy.html.
+Run npm run sync and rebuild in Android Studio.
+
+Read README.md for full instructions and TEST_REPORT.md for checks.

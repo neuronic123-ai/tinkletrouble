@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Tinkle Trouble</string>
+    <string name="title_activity_main">Tinkle Trouble</string>
+    <string name="package_name">com.vexoralabs.tinkletrouble</string>
+    <string name="custom_url_scheme">com.vexoralabs.tinkletrouble</string>
+</resources>

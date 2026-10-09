@@ -1,0 +1,11 @@
+import { readFile,writeFile } from 'node:fs/promises';
+import vm from 'node:vm';
+const scope={window:{}};vm.runInNewContext(await readFile('config.js','utf8'),scope);
+const id=scope.window.TT_CONFIG.admob.androidAppId;
+if(!/^ca-app-pub-\d{16}~\d{10}$/.test(id))throw new Error('config.js: invalid AdMob Android application ID.');
+const manifestPath='android/app/src/main/AndroidManifest.xml';let xml=await readFile(manifestPath,'utf8');
+const tag=`<meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="${id}" />`;
+if(xml.includes('com.google.android.gms.ads.APPLICATION_ID'))xml=xml.replace(/<meta-data\b(?=[^>]*com\.google\.android\.gms\.ads\.APPLICATION_ID)[^>]*\/>/s,tag);
+else xml=xml.replace('</application>',`    ${tag}\n    </application>`);
+await writeFile(manifestPath,xml);
+console.log('Android AdMob application ID configured from config.js.');

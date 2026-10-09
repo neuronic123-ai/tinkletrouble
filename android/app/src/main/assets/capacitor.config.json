@@ -1,0 +1,8 @@
+{
+	"appId": "com.vexoralabs.tinkletrouble",
+	"appName": "Tinkle Trouble",
+	"webDir": "www",
+	"android": {
+		"backgroundColor": "#f7f1ff"
+	}
+}
